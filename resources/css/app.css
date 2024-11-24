@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#flipdownDrawing,
+#flipdownWinners {
+    width: 100%;
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+}

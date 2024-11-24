@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+    <link rel="stylesheet" href="{{ asset ('css/flipdown.min.css') }}">
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -60,6 +60,7 @@
                     <div class="content m-10">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Next Drawing
                         </h2>
+                        <div id="flipdownDrawing" class="flipdown"></div>
                     </div>
                 </div>
                 <div class="box min-h-80 rounded bg-gray-300">
@@ -71,8 +72,18 @@
         </div>
     </section>
 
+    <script src="{{asset ('js/flipdown.min.js')}}"></script>
     <script type="module">
-        $(document).ready(function() {});
+        $(document).ready(function() {
+            
+            new FlipDown(Math.floor(Date.now() / 1000) + 3600, "flipdownDrawing").start().ifEnded(() => {
+                console.log("The countdown has ended!");
+            });
+
+            // new FlipDown(Math.floor(Date.now() / 1000) + 12, "flipdownWinners").start().ifEnded(() => {
+            //     console.log("The countdown has ended!");
+            // });
+        });
     </script>
 </body>
 

@@ -17,6 +17,7 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "flipdown": "^0.3.2",
         "jquery": "^3.7.1"
     }
 }
