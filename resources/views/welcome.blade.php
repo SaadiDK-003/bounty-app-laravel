@@ -50,20 +50,34 @@
     <section class="bg-white">
         <div class="container mx-auto bg-white py-5 min-h-20">
             <div class="grid sm:grid-cols-3 gap-3 px-3">
-                <div class="box min-h-80 rounded bg-gray-300">
+                <!-- Box 1 -->
+                <div class="box min-h-80 rounded border-4 border-slate-800">
                     <div class="content m-10">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Winning
                             Numbers</h2>
+                        <h4 class="mt-3 text-black text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
+                        <div class="circles-wrapper flex items-center justify-center mt-4 gap-4">
+                            <span class="w-12 h-12 flex items-center justify-center text-white bg-slate-500 rounded-full">12</span>
+                            <span class="w-12 h-12 flex items-center justify-center text-white bg-slate-500 rounded-full">13</span>
+                            <span class="w-12 h-12 flex items-center justify-center text-white bg-slate-500 rounded-full">34</span>
+                            <span class="w-12 h-12 flex items-center justify-center text-white bg-slate-500 rounded-full">44</span>
+                            <span class="w-12 h-12 flex items-center justify-center text-white bg-slate-500 rounded-full">67</span>
+                            <span class="w-12 h-12 flex items-center justify-center text-white rounded-full bg-red-600">8</span>
+                        </div>
+                        <a href="#!" class="text-white py-2 px-3 block w-40 text-center rounded-md mx-auto mt-5 bg-slate-900 hover:bg-slate-700">View Results</a>
                     </div>
                 </div>
-                <div class="box min-h-80 rounded bg-gray-300">
+                <!-- Box 2 -->
+                <div class="box min-h-80 rounded border-4 border-slate-800">
                     <div class="content m-10">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Next Drawing
                         </h2>
-                        <div id="flipdownDrawing" class="flipdown"></div>
+                        <h4 class="mt-3 text-black text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
+                        <div id="flipdownDrawing" class="flipdown mt-4"></div>
                     </div>
                 </div>
-                <div class="box min-h-80 rounded bg-gray-300">
+                <!-- Box 3 -->
+                <div class="box min-h-80 rounded border-4 border-slate-800">
                     <div class="content m-10">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Winners</h2>
                     </div>
@@ -75,7 +89,7 @@
     <script src="{{asset ('js/flipdown.min.js')}}"></script>
     <script type="module">
         $(document).ready(function() {
-            
+
             new FlipDown(Math.floor(Date.now() / 1000) + 3600, "flipdownDrawing").start().ifEnded(() => {
                 console.log("The countdown has ended!");
             });
