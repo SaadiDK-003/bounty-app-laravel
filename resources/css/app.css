@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#flipdownDrawing,
-#flipdownWinners {
+#flipDownDrawing {
     width: 100%;
     zoom: 0.8;
 }

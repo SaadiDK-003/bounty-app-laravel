@@ -1,3 +1,6 @@
+@php
+$time = strtotime(date('01-12-2024 14:00:00'))
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -47,15 +50,21 @@
             @endif
         </div>
     </header>
-    <section class="bg-white">
-        <div class="container mx-auto bg-white py-5 min-h-20">
+    <section class="banner min-h-[400px] bg-white dark:bg-black">
+        <div class="container mx-auto mt-10">
+            <div class="banner-wrapper w-100 min-h-[350px] bg-slate-600">
+            </div>
+        </div>
+    </section>
+    <section class="bg-white dark:bg-black">
+        <div class="container mx-auto bg-white dark:bg-black py-5 min-h-20">
             <div class="grid sm:grid-cols-3 gap-3 px-3">
                 <!-- Box 1 -->
                 <div class="box min-h-80 rounded border-4 border-slate-800">
                     <div class="content m-10">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Winning
                             Numbers</h2>
-                        <h4 class="mt-3 text-black text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
+                        <h4 class="mt-3 text-black dark:text-white text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
                         <div class="circles-wrapper flex items-center justify-center mt-4 gap-4">
                             <span class="w-12 h-12 flex items-center justify-center text-white bg-slate-500 rounded-full">12</span>
                             <span class="w-12 h-12 flex items-center justify-center text-white bg-slate-500 rounded-full">13</span>
@@ -72,31 +81,51 @@
                     <div class="content m-10">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Next Drawing
                         </h2>
-                        <h4 class="mt-3 text-black text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
-                        <div id="flipdownDrawing" class="flipdown mt-4"></div>
+                        <h4 class="mt-3 text-black dark:text-white text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
+                        <div id="flipDownDrawing" data-time="{{$time}}" class="flipdown mt-4 flex justify-center"></div>
                     </div>
                 </div>
                 <!-- Box 3 -->
                 <div class="box min-h-80 rounded border-4 border-slate-800">
                     <div class="content m-10">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Winners</h2>
+                        <h4 class="mt-3 text-black dark:text-white text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
+                        <div class="winners-wrapper mt-3">
+                            <h5 class="text-center text-white w-52 mx-auto rounded-md bg-red-600 font-bold">POWER BALL</h5>
+                            <h3 class="text-center text-black dark:text-white font-extrabold text-2xl">JACKPOT WINNER</h3>
+                            <ul class="flex items-center justify-center flex-col">
+                                <li><a class="text-black dark:text-white" href="#!">User Abc</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <script src="{{asset ('js/flipdown.min.js')}}"></script>
     <script type="module">
         $(document).ready(function() {
-
-            new FlipDown(Math.floor(Date.now() / 1000) + 3600, "flipdownDrawing").start().ifEnded(() => {
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = isDarkMode ? 'light' : 'dark';
+            const targetTime = $("#flipDownDrawing").data('time');
+            new FlipDown(targetTime, "flipDownDrawing", {
+                theme: theme
+            }).start().ifEnded(() => {
                 console.log("The countdown has ended!");
             });
 
-            // new FlipDown(Math.floor(Date.now() / 1000) + 12, "flipdownWinners").start().ifEnded(() => {
-            //     console.log("The countdown has ended!");
-            // });
+            let Days = $("#flipDownDrawing .rotor-group:nth-child(1) .rotor:nth-of-type(3)").text().trim();
+            let Hours = $("#flipDownDrawing .rotor-group:nth-child(2) .rotor:nth-of-type(3)").text().trim();
+
+            if (Days === '0000') {
+                console.log('days are now 00');
+                $("#flipDownDrawing .rotor-group:nth-child(1)").hide();
+            }
+            if (Hours === '0000') {
+                console.log('days are now 00');
+                $("#flipDownDrawing .rotor-group:nth-child(2)").hide();
+            }
+
         });
     </script>
 </body>
