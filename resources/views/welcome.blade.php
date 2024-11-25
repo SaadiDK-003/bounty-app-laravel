@@ -52,7 +52,16 @@ $time = strtotime(date('01-12-2024 14:00:00'))
     </header>
     <section class="banner min-h-[400px] bg-white dark:bg-black">
         <div class="container mx-auto mt-10">
-            <div class="banner-wrapper w-100 min-h-[350px] bg-slate-600">
+            <div class="banner-wrapper w-100 min-h-[380px] bg-slate-600 rounded-md grid grid-cols-5 overflow-hidden">
+                <div class="content col-span-3 relative bg-[#e32e35]">
+                    <div class="content absolute top-[50%] translate-y-[-50%] left-20 grid gap-5">
+                        <h1 class="text-white text-3xl">Our Biggest Jackpot</h1>
+                        <h2 class="text-white text-4xl">US<span class="text-6xl">$480</span>Million</h2>
+                    </div>
+                </div>
+                <div class="img col-span-2">
+                    <img src="https://picsum.photos/614/380" alt="banner-img" width="614" height="380">
+                </div>
             </div>
         </div>
     </section>
