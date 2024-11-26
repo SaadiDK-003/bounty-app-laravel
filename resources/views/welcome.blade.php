@@ -115,17 +115,28 @@ $time = strtotime(date('01-12-2024 14:00:00'))
     </section>
 
     <section class="bonds-section">
-        <div class="container max-w-7xl mx-auto min-h-[300px] w-full mb-5 grid grid-cols-2">
+        <div class="container max-w-7xl mx-auto min-h-[320px] w-full mb-5 grid grid-cols-2">
             <div class="col p-5">
                 <div class="content-wrapper border-[3px] border-slate-700 dark:border-white rounded-md h-full bg-white dark:bg-slate-800">
                     <h2 class="text-center my-3 text-4xl uppercase font-bold"><span class="text-red-700">$50</span> Prize Bond</h2>
                     <hr class="h-1 bg-slate-500 dark:bg-white border-none">
-                    <div class="grid grid-cols-5 gap-3 p-3 px-6 justify-items-center">
-                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active active:bg-red-700 dark:active:text-white active:pointer-events-none">1</a>
+                    <div class="grid grid-cols-5 gap-3 p-3 px-6 justify-items-center relative">
+                        <!-- row 1 -->
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none active">1</a>
                         <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">2</a>
-                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">3</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none active">3</a>
                         <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">4</a>
                         <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">5</a>
+                        <!-- row 2 -->
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">6</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">7</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">8</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none active">9</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">10</a>
+                        <div class="info w-full flex items-center justify-between absolute py-3 px-4 -bottom-14">
+                            <span class="bg-red-600 text-white px-2 rounded-sm">RED TAKEN</span>
+                            <span class="bg-slate-400 dark:bg-slate-600 text-white px-2 rounded-sm"><span class="dark:hidden">GRAY</span><span class="hidden dark:inline">WHITE</span> AVAILABLE</span>
+                        </div>
                     </div>
 
                 </div>
