@@ -135,7 +135,7 @@ $time = strtotime(date('01-12-2024 14:00:00'))
                         <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">10</a>
                         <div class="info w-full flex items-center justify-between absolute py-3 px-4 -bottom-14">
                             <span class="bg-red-600 text-white px-2 rounded-sm">RED TAKEN</span>
-                            <span class="bg-slate-400 dark:bg-slate-600 text-white px-2 rounded-sm"><span class="dark:hidden">GRAY</span><span class="hidden dark:inline">WHITE</span> AVAILABLE</span>
+                            <span class="bg-slate-500 dark:bg-slate-600 text-white px-2 rounded-sm"><span class="dark:hidden">GRAY</span><span class="hidden dark:inline">WHITE</span> AVAILABLE</span>
                         </div>
                     </div>
 
