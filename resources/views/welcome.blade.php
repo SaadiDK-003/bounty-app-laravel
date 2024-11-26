@@ -14,6 +14,7 @@ $time = strtotime(date('01-12-2024 14:00:00'))
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset ('css/flipdown.min.css') }}">
+    <link rel="stylesheet" href="{{ asset ('css/owl.carousel.min.css') }}">
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -65,6 +66,7 @@ $time = strtotime(date('01-12-2024 14:00:00'))
             </div>
         </div>
     </section>
+
     <section class="bg-white dark:bg-black">
         <div class="container mx-auto bg-white dark:bg-black py-5 min-h-20">
             <div class="grid sm:grid-cols-3 gap-3 px-3">
@@ -111,30 +113,34 @@ $time = strtotime(date('01-12-2024 14:00:00'))
             </div>
         </div>
     </section>
+
+    <section class="bonds-section">
+        <div class="container max-w-7xl mx-auto min-h-[300px] w-full mb-5 grid grid-cols-2">
+            <div class="col p-5">
+                <div class="content-wrapper border-[3px] border-slate-700 dark:border-white rounded-md h-full bg-white dark:bg-slate-800">
+                    <h2 class="text-center my-3 text-4xl uppercase font-bold"><span class="text-red-700">$50</span> Prize Bond</h2>
+                    <hr class="h-1 bg-slate-500 dark:bg-white border-none">
+                    <div class="grid grid-cols-5 gap-3 p-3 px-6 justify-items-center">
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active active:bg-red-700 dark:active:text-white active:pointer-events-none">1</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">2</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">3</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">4</a>
+                        <a href="#!" class="flex items-center justify-center rounded-full text-white dark:text-black text-2xl bg-slate-400 dark:bg-white w-14 h-14 hover:bg-slate-700 dark:hover:bg-slate-400 active:bg-red-700 dark:active:text-white active:pointer-events-none">5</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </section>
+
+    <script src="{{asset ('js/jquery-3.7.1.min.js')}}"></script>
     <script src="{{asset ('js/flipdown.min.js')}}"></script>
-    <script type="module">
+    <script src="{{asset ('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset ('js/custom.js')}}"></script>
+    <script>
         $(document).ready(function() {
-            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = isDarkMode ? 'light' : 'dark';
-            const targetTime = $("#flipDownDrawing").data('time');
-            new FlipDown(targetTime, "flipDownDrawing", {
-                theme: theme
-            }).start().ifEnded(() => {
-                console.log("The countdown has ended!");
-            });
-
-            let Days = $("#flipDownDrawing .rotor-group:nth-child(1) .rotor:nth-of-type(3)").text().trim();
-            let Hours = $("#flipDownDrawing .rotor-group:nth-child(2) .rotor:nth-of-type(3)").text().trim();
-
-            if (Days === '0000') {
-                console.log('days are now 00');
-                $("#flipDownDrawing .rotor-group:nth-child(1)").hide();
-            }
-            if (Hours === '0000') {
-                console.log('days are now 00');
-                $("#flipDownDrawing .rotor-group:nth-child(2)").hide();
-            }
-
+            // $('.owl-carousel').owlCarousel();
         });
     </script>
 </body>
