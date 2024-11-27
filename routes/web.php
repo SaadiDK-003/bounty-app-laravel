@@ -1,15 +1,23 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\{ProfileController, BondsController};
 use Illuminate\Support\Facades\Route;
 
+/* Global Routes */
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+/* Admin & User Routes */
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [BondsController::class, 'index'])->name('dashboard');
+});
+
+/* Only Admin Routes */
+Route::middleware(['auth', 'verified', 'admin'])->group(function () {
+    Route::get('/view-bound', [BondsController::class, 'viewBound'])->name('view-bound');
+    Route::patch('/add-bound', [BondsController::class, 'addBound'])->name('add-bound');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -17,4 +25,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
