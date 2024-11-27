@@ -12,7 +12,7 @@ class AppLayout extends Component
      */
     public function render(): View
     {
-        $is_admin = DB::table("users")->where(['id' => Auth::id(), 'is_admin' => true])->exists();
+        $is_admin = DB::table("users")->where(['id' => Auth::id(), 'is_admin' => '1'])->exists();
         if ($is_admin) {
             return view('layouts.app');
         } else {

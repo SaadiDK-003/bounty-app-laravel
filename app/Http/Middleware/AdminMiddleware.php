@@ -32,6 +32,6 @@ class AdminMiddleware
      */
     public function isAdmin(): bool
     {
-        return DB::table("users")->where(['id' => Auth::id(), 'is_admin' => true])->exists();
+        return DB::table("users")->where(['id' => Auth::id(), 'is_admin' => '1'])->exists();
     }
 }
