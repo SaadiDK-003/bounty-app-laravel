@@ -25,14 +25,14 @@
 
                         <div class="col-span-2">
                             <x-input-label for="price" :value="__('Price')"/>
-                            <x-text-input id="price" name="price" type="text" class="mt-1 block w-full"
+                            <x-text-input id="price" name="price" type="text" class="mt-1 block w-full [appearance:textfield]"
                                           required autocomplete="price"/>
                             <x-input-error class="mt-2" :messages="$errors->get('price')"/>
                         </div>
 
                         <div class="col-span-2">
                             <x-input-label for="slots" :value="__('Number of Slots')"/>
-                            <x-text-input id="slots" name="slots" type="text" class="mt-1 block w-full"
+                            <x-text-input id="slots" name="slots" type="text" class="mt-1 block w-full [appearance:textfield]"
                                           required autocomplete="slots"/>
                             <x-input-error class="mt-2" :messages="$errors->get('slots')"/>
                         </div>
