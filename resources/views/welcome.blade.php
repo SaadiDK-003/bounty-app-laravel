@@ -24,6 +24,7 @@ $time = strtotime(date('01-12-2024 14:00:00'))
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
 
+    <!-- HEADER -->
     <header class="bg-slate-800 flex items-center justify-center  min-h-20">
         <div class="container mx-auto flex items-center justify-between px-5">
             <h1 id="test" class="text-3xl text-white">LOGO HERE</h1>
@@ -51,28 +52,30 @@ $time = strtotime(date('01-12-2024 14:00:00'))
             @endif
         </div>
     </header>
+    <!-- BANNER SECTION -->
     <section class="banner min-h-[400px] bg-white dark:bg-black">
-        <div class="container mx-auto mt-10">
-            <div class="banner-wrapper w-100 min-h-[380px] bg-slate-600 rounded-md grid grid-cols-5 overflow-hidden">
-                <div class="content col-span-3 relative bg-[#e32e35]">
+        <div class="container mx-auto mt-10 p-2 sm:p-0">
+            <div class="banner-wrapper w-100 min-h-[380px] bg-slate-600 rounded-md grid grid-cols-1 sm:grid-cols-5 overflow-hidden">
+                <div class="content row-span-2 sm:row-auto sm:col-span-3 relative bg-[#e32e35]">
                     <div class="content absolute top-[50%] translate-y-[-50%] left-20 grid gap-5">
                         <h1 class="text-white text-3xl">Our Biggest Jackpot</h1>
                         <h2 class="text-white text-4xl">US<span class="text-6xl">$480</span>Million</h2>
                     </div>
                 </div>
-                <div class="img col-span-2">
-                    <img src="https://picsum.photos/614/380" alt="banner-img" width="614" height="380">
+                <div class="img row-span-1 sm:row-auto sm:col-span-2 max-h-[80px]">
+                    <img src="https://picsum.photos/614/380" class="object-cover" alt="banner-img" width="614" height="380">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- THREE COLUMN SECTION -->
     <section class="bg-white dark:bg-black">
         <div class="container mx-auto bg-white dark:bg-black py-5 min-h-20">
-            <div class="grid sm:grid-cols-3 gap-3 px-3">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 px-3">
                 <!-- Box 1 -->
                 <div class="box min-h-80 rounded border-4 border-slate-800">
-                    <div class="content m-10">
+                    <div class="content m-2 sm:m-8">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Winning
                             Numbers</h2>
                         <h4 class="mt-3 text-black dark:text-white text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
@@ -89,7 +92,7 @@ $time = strtotime(date('01-12-2024 14:00:00'))
                 </div>
                 <!-- Box 2 -->
                 <div class="box min-h-80 rounded border-4 border-slate-800">
-                    <div class="content m-10">
+                    <div class="content m-2 sm:m-8">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Next Drawing
                         </h2>
                         <h4 class="mt-3 text-black dark:text-white text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
@@ -98,7 +101,7 @@ $time = strtotime(date('01-12-2024 14:00:00'))
                 </div>
                 <!-- Box 3 -->
                 <div class="box min-h-80 rounded border-4 border-slate-800">
-                    <div class="content m-10">
+                    <div class="content m-2 sm:m-8">
                         <h2 class="bg-gray-800 rounded-md text-center py-2 text-2xl text-white font-bold">Winners</h2>
                         <h4 class="mt-3 text-black dark:text-white text-2xl text-center font-bold">{{date('D, M d, Y')}}</h4>
                         <div class="winners-wrapper mt-3">
@@ -114,8 +117,9 @@ $time = strtotime(date('01-12-2024 14:00:00'))
         </div>
     </section>
 
+    <!-- BOND SECTION -->
     <section class="bonds-section">
-        <div class="container max-w-7xl mx-auto min-h-[320px] w-full mb-5 grid grid-cols-2">
+        <div class="container max-w-7xl mx-auto min-h-[320px] w-full mb-5 grid grid-cols-1 sm:grid-cols-2">
             <!-- Column Left -->
             <div class="col p-5 row-span-3">
                 <div class="content-wrapper border-[3px] border-slate-700 dark:border-white rounded-md h-full bg-white dark:bg-slate-800">

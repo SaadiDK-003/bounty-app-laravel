@@ -4,5 +4,12 @@
 
 #flipDownDrawing {
     width: 100%;
-    zoom: 0.8;
+    zoom: 1;
+}
+
+@media (min-width: 640px) {
+    #flipDownDrawing {
+        width: 100%;
+        zoom: 0.8;
+    }
 }
