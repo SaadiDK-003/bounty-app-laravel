@@ -1,7 +1,8 @@
 $(function () {
-    const isDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-    ).matches;
+    // const isDarkMode = window.matchMedia(
+    //     "(prefers-color-scheme: dark)"
+    // ).matches;
+    const isDarkMode = $(document).find('html').hasClass('dark');
     const theme = isDarkMode ? "light" : "dark";
     const targetTime = $("#flipDownDrawing").data("time");
     new FlipDown(targetTime, "flipDownDrawing", {
