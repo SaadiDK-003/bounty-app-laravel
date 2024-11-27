@@ -2,8 +2,8 @@
 
 namespace App\View\Components;
 
-use Illuminate\View\Component;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\{Auth, DB};
+use Illuminate\View\{Component, View};
 
 class AppLayout extends Component
 {
@@ -12,6 +12,11 @@ class AppLayout extends Component
      */
     public function render(): View
     {
-        return view('layouts.app');
+        $is_admin = DB::table("users")->where(['id' => Auth::id(), 'is_admin' => true])->exists();
+        if ($is_admin) {
+            return view('layouts.app');
+        } else {
+            return view('layouts.user_app');
+        }
     }
 }
